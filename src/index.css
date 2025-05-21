@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background: rgb(185, 200, 225);
+}
+
+textarea, input, select {
+  background-color: #ffe4e4;
+  transition: border-color 0.25s;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #000000;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+textarea:focus-visible {
+  border: none !important;
+}
+
+text {
+  fill: currentColor;
+}
+
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+input, select, #transitions-editor, #tikz-editor  {
+  font-family: "Fira Mono";
+  box-shadow: inset 3px 3px 7px 0px #ccc;
+  border: 1px solid #585858;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+code {
+  font-family: "Fira Mono";
+}
+
+
+
+/* inerse colors  */
+/* @media (prefers-color-scheme: dark) {
+  html {
+    filter: invert(1) hue-rotate(180deg);
+  }
+} */
+
+#tikzDiagram {
+  position: relative;
+}
+#tikzDiagram.loading svg {
+  filter: blur(5px);
+}
+/* Add a loading spinner */
+#tikzDiagram.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-radius: 50%;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
