@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import tikzjaxJs from "./tikzjax.js?raw"; // For Vite (bundler must support ?raw)
 import Editor from "react-simple-code-editor";
-import Prism from "prismjs";
 import "prismjs/themes/prism.css";
 import { highlight, languages } from 'prismjs';
 import 'prismjs/components/prism-latex';
